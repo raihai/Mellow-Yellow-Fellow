@@ -1,0 +1,16 @@
+Paul 6000
+Eli 6000
+Stuart 8500
+Barry 1000
+Ryan 6500	
+Karl 9050
+Izzie 7500
+Chris 8000
+Ash 8600
+Dan -1
+test 1100
+test 900
+asdsad 19000
+test 1700
+HEY 13000
+adsad 2400
