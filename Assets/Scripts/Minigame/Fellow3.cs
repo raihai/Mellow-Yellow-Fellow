@@ -21,7 +21,7 @@ public class Fellow3 : MonoBehaviour
     void Start()
     {
 
-        progressUI.text = "Keys Taken: 0\nKeys Remaining: " + KeyLimit;
+        progressUI.text = "Obtained: 0\nCapsules Remaining: " + KeyLimit;
 
 
     }
@@ -56,7 +56,7 @@ public class Fellow3 : MonoBehaviour
 
     public void CheckLimt()
     {
-        progressUI.text = "Keys: " + Keys + "\nKeys Remaining: " + (KeyLimit - Keys);
+        progressUI.text = "Obtained: " + Keys + "\nCapsules Remaining: " + (KeyLimit - Keys);
 
         if (Keys >= KeyLimit)
         {

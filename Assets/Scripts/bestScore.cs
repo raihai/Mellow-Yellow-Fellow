@@ -11,6 +11,7 @@ public class bestScore : MonoBehaviour
 
     private void Start()
     {
+
         getBestScore.LoadHighScoreTable();
         getBestScore.SortHighScoreEntries();
         writeHighScore.text = "High Score:\n" + getBestScore.allScores[0].score;

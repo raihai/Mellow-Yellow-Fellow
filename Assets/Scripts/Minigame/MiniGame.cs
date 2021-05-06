@@ -10,6 +10,8 @@ public class MiniGame : MonoBehaviour
     [SerializeField]
     GameObject RulesUI;
 
+    
+
     enum GameMode
     {
         InGame,

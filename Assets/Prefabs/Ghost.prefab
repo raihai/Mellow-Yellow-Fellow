@@ -149,4 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac77b944f289e1448a3e0142e08f6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
   player: {fileID: 0}
+  scaredMaterial: {fileID: 2100000, guid: cdf646a202781b34eb9a1991f26371d7, type: 2}
+  normalMaterial: {fileID: 0}
+  frozenMaterial: {fileID: 2100000, guid: a31ca741a858e5c4a8fc0742bbe46a0e, type: 2}
+  hiding: 0

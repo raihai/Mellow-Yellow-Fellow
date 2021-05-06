@@ -22,6 +22,15 @@ public class SecondGhost : ghost
 
             }
         }
+        else if (player.FreezePowerUpActive())
+        {
+            
+           
+            StartCoroutine(waitFrozen());
+            hiding = false;
+
+
+        }
         else
         {
             Debug.Log(" Second ghost Chasing Player !");

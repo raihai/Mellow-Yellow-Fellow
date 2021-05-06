@@ -30,11 +30,13 @@ public class YellowFellowGame : MonoBehaviour
     GameObject[] pellets;
 
     public Animator animateCamera;
-    public static bool isCutSceneOn;
+    //public static bool isCutSceneOn;
 
     public GameObject completeLevelUI;
-    
 
+    public GameObject cameraView;
+    Vector3 normalCameraView;
+    
 
     enum GameMode
     {
@@ -53,6 +55,7 @@ public class YellowFellowGame : MonoBehaviour
     {
         string nname = SceneManager.GetActiveScene().name;
         Time.timeScale = 0f;
+        normalCameraView = new Vector3(7.63f, 17f, 7f);
         if (nname == "Level1")
         {
             
@@ -62,13 +65,14 @@ public class YellowFellowGame : MonoBehaviour
             
            
             Cutscene();
-
+            
 
 
         }
 
 
         pellets = GameObject.FindGameObjectsWithTag("Pellet");
+
     }
 
   
@@ -86,7 +90,9 @@ public class YellowFellowGame : MonoBehaviour
             case GameMode.Cutscene:     UpdateCutscene(); break;
         }
 
-        if(playerObject.PelletsEaten() == pellets.Length)
+        
+
+        if (playerObject.PelletsEaten() == pellets.Length )
         {
             
             completeLevelUI.SetActive(true);
@@ -94,6 +100,7 @@ public class YellowFellowGame : MonoBehaviour
            
          
         }
+        
 
         if (playerObject.dead)
         {
@@ -127,10 +134,17 @@ public class YellowFellowGame : MonoBehaviour
 
     void UpdateCutscene()
     {
+        
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            animateCamera.gameObject.GetComponent<Animator>().enabled = false;
+            cameraView.transform.position = normalCameraView;
             StartGame();
+            
+            
         }
+        
     }
 
     void UpdateMainGame()
@@ -168,7 +182,9 @@ public class YellowFellowGame : MonoBehaviour
 
     void Cutscene()
     {
+        
         gameMode                    = GameMode.Cutscene;
+        
         mainMenuUI.gameObject.SetActive(false);
         highScoreUI.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(false);

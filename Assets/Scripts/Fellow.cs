@@ -20,6 +20,7 @@ public class Fellow : MonoBehaviour
     float powerupDuration = 5.0f;
 
     float powerupTime = 0.0f;
+    float powerupTimeFroze = 0.0f;
 
     Vector3 leftTeleporter;
     Vector3 rightTeleporter;
@@ -36,7 +37,6 @@ public class Fellow : MonoBehaviour
     public GameObject[] ghosts;
     public string savedScore;
     public AudioSource deathSound;
-
 
 
 
@@ -61,11 +61,7 @@ public class Fellow : MonoBehaviour
             PlayerPrefs.SetInt(savedScore, 0);
         }
         else { score = PlayerPrefs.GetInt(savedScore); }
-        
-      
-     
-       
-
+    
 
     }
 
@@ -86,6 +82,12 @@ public class Fellow : MonoBehaviour
             powerupTime = powerupDuration;
         }
 
+        if (other.gameObject.CompareTag("FreezePowerup"))
+        {
+            powerupTimeFroze = powerupDuration;
+            
+        }
+
         if (other.gameObject.CompareTag("RightTeleport"))
         {
             transform.position = leftTeleporter;
@@ -103,6 +105,12 @@ public class Fellow : MonoBehaviour
         return powerupTime > 0.0f;
     }
 
+    public bool FreezePowerUpActive()
+    {
+
+        return powerupTimeFroze > 0.0f;
+    }
+
     public int PelletsEaten()
     {
         return pelletEaten;
@@ -112,9 +120,12 @@ public class Fellow : MonoBehaviour
     {
         powerupTime = Mathf.Max(0.0f, powerupTime - Time.deltaTime);
 
+        powerupTimeFroze = Mathf.Max(0.0f, powerupTime - Time.deltaTime);
+
+
         if (dead == true)
         {
-            print("back to start sucker!");
+            print("Back to the start!");
 
            
         }
@@ -160,15 +171,16 @@ public class Fellow : MonoBehaviour
             ghosts = GameObject.FindGameObjectsWithTag("Ghost");
             foreach (GameObject ghosts in ghosts)
             {
-                ghosts.transform.position = new Vector3(7.5f, 0.1f, 6.5f);
-            }
-
-            if (PowerUpActive())
-            {
-                print("ate!");
+                ghosts.transform.position = new Vector3(7.5f , 0f, 6.5f);
                 
             }
-            else if (livesRemaining >= 1)
+
+            if (PowerUpActive() || FreezePowerUpActive())
+            {
+                print("");
+
+            }          
+            else if(livesRemaining >= 1)
             {
                
                 transform.position = startPosition;

@@ -20,8 +20,9 @@ public class ghost : MonoBehaviour
     [SerializeField]
     public Material scaredMaterial;
     public Material normalMaterial;
+    public Material frozenMaterial;
 
-
+    
 
     public bool CanSeePlayer()
     {
@@ -87,6 +88,19 @@ public class ghost : MonoBehaviour
         return navHit.position;
     }
 
+    public IEnumerator waitFrozen()
+    {
+       
+        agent.isStopped = true;
+        GetComponent<Renderer>().material = frozenMaterial;
+        yield return new WaitForSeconds(5);
+        StopCoroutine(waitFrozen());
+        agent.isStopped = false;
+        GetComponent<Renderer>().material = normalMaterial;
+
+    }
+
+
     public bool hiding = false;
 
     // Update is called once per frame
@@ -105,6 +119,13 @@ public class ghost : MonoBehaviour
 
             }
         }
+        else if (player.FreezePowerUpActive())
+        {
+          
+            
+            StartCoroutine(waitFrozen());
+            hiding = false;
+        }
         else
         {
             Debug.Log(" Chasing Player !");
@@ -118,7 +139,7 @@ public class ghost : MonoBehaviour
                 Debug.Log("I can see you!");
                 agent.destination = player.transform.position;
                 hiding = false;
-                GetComponent<Renderer>().material = normalMaterial;
+                //GetComponent<Renderer>().material = normalMaterial;
             }
             else if (agent.remainingDistance < 0.5f)
             {

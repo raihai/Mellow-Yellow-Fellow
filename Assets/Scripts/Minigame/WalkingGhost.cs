@@ -27,7 +27,6 @@ public class WalkingGhost : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            print("back to start sucker!");
 
             SceneManager.LoadScene("Minigame");
         }

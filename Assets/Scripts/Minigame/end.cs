@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class end : MonoBehaviour
 {
+    public GameObject completeLevelUI;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Level3");
+            completeLevelUI.SetActive(true);
+            Debug.Log("Game Over");
         } 
     }
 }
