@@ -14,8 +14,7 @@ public class ghost : MonoBehaviour
 
    Vector3 LeftTeleporter;
    Vector3 RightTeleporter;
-
-    Vector3 startPosition;
+    Vector3 StartPosition;
 
     [SerializeField]
     public Material scaredMaterial;
@@ -49,18 +48,13 @@ public class ghost : MonoBehaviour
 
         LeftTeleporter = new Vector3(0.1f, 0.7f, 7f);
         RightTeleporter = new Vector3(14.8f, 0.7f, 7f);
+        StartPosition = new Vector3(7.5f, 0.1f, 7.70f);
 
         agent = GetComponent<NavMeshAgent>();
-       
+        
         agent.destination = PickRandomPosition();
 
         normalMaterial = GetComponent<Renderer>().material;
-
-        startPosition = new Vector3(7.5f, 0.1f, 6.5f);
-
-      
-
-
 
     }
     
@@ -165,20 +159,17 @@ public class ghost : MonoBehaviour
         if (other.gameObject.CompareTag("LeftTeleport"))
         {
             agent.Warp(RightTeleporter);
-        }      
+        }
+        
+       
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollision( Collision collision)
     {
-        
-        if (collision.gameObject.CompareTag("Fellow"))
+        if (collision.gameObject.CompareTag("Ghost"))
         {
-            
-            agent.Warp(startPosition);
-
+            agent.Warp(StartPosition);
         }
-
-
     }
 
 

@@ -169,15 +169,19 @@ public class Fellow : MonoBehaviour
         if (collision.gameObject.CompareTag("Ghost"))
         {
             ghosts = GameObject.FindGameObjectsWithTag("Ghost");
+
             foreach (GameObject ghosts in ghosts)
             {
-                ghosts.transform.position = new Vector3(7.5f , 0f, 6.5f);
-                
+                ghosts.transform.position = new Vector3(7.5f, 0.1f, 7.70f);
             }
+
+           
+
+      
 
             if (PowerUpActive() || FreezePowerUpActive())
             {
-                print("");
+                print("hello");
 
             }          
             else if(livesRemaining >= 1)

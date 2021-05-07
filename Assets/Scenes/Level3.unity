@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.1
+    agentRadius: 0.2
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.033333335
+    cellSize: 0.06666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -7303,7 +7303,7 @@ PrefabInstance:
     - target: {fileID: 734817329772037454, guid: 420e9ccf035f7f944acc6a71eade7757, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7bd53a61981afea499410df98682337e, type: 2}
+      objectReference: {fileID: 2100000, guid: 05690c93bae8aff4d94f1e04b8b4ad79, type: 2}
     - target: {fileID: 1648785869318675021, guid: 420e9ccf035f7f944acc6a71eade7757, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.28
@@ -7389,7 +7389,7 @@ MonoBehaviour:
   agent: {fileID: 632621897}
   player: {fileID: 1261487206}
   scaredMaterial: {fileID: 2100000, guid: cdf646a202781b34eb9a1991f26371d7, type: 2}
-  normalMaterial: {fileID: 0}
+  normalMaterial: {fileID: 2100000, guid: 05690c93bae8aff4d94f1e04b8b4ad79, type: 2}
   frozenMaterial: {fileID: 2100000, guid: 64ae452a4ab6d6f41992d538c1ce8243, type: 2}
   hiding: 0
 --- !u!1001 &637991409
@@ -9199,7 +9199,7 @@ PrefabInstance:
     - target: {fileID: 734817329772037454, guid: 420e9ccf035f7f944acc6a71eade7757, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9613a3b7109b8384aa4b3149c8f68f68, type: 2}
+      objectReference: {fileID: 2100000, guid: b110e74b358d53c47bce3f0b49827923, type: 2}
     - target: {fileID: 1648785869318675021, guid: 420e9ccf035f7f944acc6a71eade7757, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.63
@@ -9285,7 +9285,7 @@ MonoBehaviour:
   agent: {fileID: 846765765}
   player: {fileID: 1261487206}
   scaredMaterial: {fileID: 2100000, guid: cdf646a202781b34eb9a1991f26371d7, type: 2}
-  normalMaterial: {fileID: 0}
+  normalMaterial: {fileID: 2100000, guid: b110e74b358d53c47bce3f0b49827923, type: 2}
   frozenMaterial: {fileID: 2100000, guid: 64ae452a4ab6d6f41992d538c1ce8243, type: 2}
   hiding: 0
 --- !u!1001 &847351866
@@ -10806,7 +10806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5141248429569295327, guid: 1caf0a67850d1dc44be37e7cf344cd4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.669
+      value: 5.667
       objectReference: {fileID: 0}
     - target: {fileID: 5141248429569295327, guid: 1caf0a67850d1dc44be37e7cf344cd4f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10834,7 +10834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5141248429569295327, guid: 1caf0a67850d1dc44be37e7cf344cd4f, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5141248429569295327, guid: 1caf0a67850d1dc44be37e7cf344cd4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13673,7 +13673,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -5.6}
-  m_SizeDelta: {x: 200, y: 130}
+  m_SizeDelta: {x: 300, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1295898231
 MonoBehaviour:
@@ -15589,6 +15589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bf8a4a98dba734faf48c9b178b5256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputWindow: {fileID: 1779369781}
 --- !u!114 &1429617353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21543,7 +21544,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 40.3}
-  m_SizeDelta: {x: 200, y: 40}
+  m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1961691973
 MonoBehaviour:

@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameCompleted : MonoBehaviour
 {
-    public void LoadNewLevel()
+    [SerializeField]
+    GameObject inputWindow;
+
+    private void LoadNewLevel()
     {
-        SceneManager.LoadScene("Level1");
+        Time.timeScale = 0f;
+        inputWindow.SetActive(true);
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class SecondGhost : ghost
 {
+
   
-    
     public override void Update()
     {
 
@@ -52,5 +52,7 @@ public class SecondGhost : ghost
 
     }
 
-    
+  
+
+
 }
