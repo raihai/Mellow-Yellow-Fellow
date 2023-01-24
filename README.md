@@ -1,3 +1,3 @@
 # CSC2034
 
-Mellow Yellow game repository. 
+3D Pac Man game
